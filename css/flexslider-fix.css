@@ -1,9 +1,9 @@
 .flexslider .slides img {
-    max-height: 300px; /*maximum height for all slides*/
+    max-height: 360px; /*maximum height for all slides*/
     width: auto; /*proper aspect ratio of images*/
-    max-width: 45%; /*maximum width for all slides*/
+    max-width: 85%; /*maximum width for all slides*/
     margin: 0 auto; /*centering images in the container*/
 }
 .flex-direction-nav a  {
-    line-height: 40px;
+    line-height: 40px; /*fixes the known problem with < and > displying incompletely*/
 }

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title></title>
- <link href="https://github.com/nerddonkey/sigpro/atom.xml" rel="self"/>
- <link href="https://github.com/nerddonkey/sigpro/"/>
- <updated>2019-03-22T20:02:04+11:00</updated>
- <id>https://github.com/nerddonkey/sigpro</id>
+ <link href="http://localhost:4010/atom.xml" rel="self"/>
+ <link href="http://localhost:4010/"/>
+ <updated>2019-04-18T23:08:12+10:00</updated>
+ <id>http://localhost:4010</id>
  <author>
    <name></name>
    <email></email>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Poor-man's Reverberation Modelling with MATLAB&reg;</title>
-   <link href="https://github.com/nerddonkey/sigpro/blogs/2015-08-04/reverb.html"/>
+   <link href="http://localhost:4010/blogs/2015-08-04/reverb.html"/>
    <updated>2015-08-04T00:00:00+10:00</updated>
-   <id>https://github.com/nerddonkey/sigpro/blogs/2015-08-04/reverb</id>
+   <id>http://localhost:4010/blogs/2015-08-04/reverb</id>
    <content type="html">&lt;p&gt;Here we create an artificial simple reverberation using a convolution.  This is an example of a LTI system and we select the input to be any audio signal (&lt;code&gt;reverb-in.wav&lt;/code&gt;) and the output will be the audio signal with reverberation/echo (&lt;code&gt;reverb-out.wav&lt;/code&gt;) .&lt;/p&gt;
 
 &lt;h3 class=&quot;no_toc toc_title no-print&quot; id=&quot;page-index&quot;&gt;Page Index&lt;/h3&gt;
@@ -106,9 +106,9 @@
  
  <entry>
    <title>Derivative of CT signals with MATLAB&reg;</title>
-   <link href="https://github.com/nerddonkey/sigpro/blogs/2015-08-01/derivative.html"/>
+   <link href="http://localhost:4010/blogs/2015-08-01/derivative.html"/>
    <updated>2015-08-01T00:00:00+10:00</updated>
-   <id>https://github.com/nerddonkey/sigpro/blogs/2015-08-01/derivative</id>
+   <id>http://localhost:4010/blogs/2015-08-01/derivative</id>
    <content type="html">&lt;p&gt;We use fine-scale discrete time to emulate continuous time.  Then we use discrete approximation to the derivative to model a system whose output is the derivative of the input.&lt;/p&gt;
 
 &lt;h3 class=&quot;no_toc toc_title no-print&quot; id=&quot;page-index&quot;&gt;Page Index&lt;/h3&gt;
@@ -209,9 +209,9 @@
  
  <entry>
    <title>Hacking with MATLAB&reg; and Complex Exponentials</title>
-   <link href="https://github.com/nerddonkey/sigpro/blogs/2015-07-28/complex-exp.html"/>
+   <link href="http://localhost:4010/blogs/2015-07-28/complex-exp.html"/>
    <updated>2015-07-28T00:00:00+10:00</updated>
-   <id>https://github.com/nerddonkey/sigpro/blogs/2015-07-28/complex-exp</id>
+   <id>http://localhost:4010/blogs/2015-07-28/complex-exp</id>
    <content type="html">&lt;p&gt;In the lectures it was illustrated how to use MATLAB® to explore complex exponentials. Complex values &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\alpha&lt;/script&gt; are the same symbols as shown on Slide 68 of the lectures.&lt;/p&gt;
 
 &lt;h3 class=&quot;no_toc toc_title no-print&quot; id=&quot;page-index&quot;&gt;Page Index&lt;/h3&gt;
@@ -357,9 +357,9 @@
  
  <entry>
    <title>Get Started with this Site</title>
-   <link href="https://github.com/nerddonkey/sigpro/blogs/2015-07-12/welcome.html"/>
+   <link href="http://localhost:4010/blogs/2015-07-12/welcome.html"/>
    <updated>2015-07-12T00:00:00+10:00</updated>
-   <id>https://github.com/nerddonkey/sigpro/blogs/2015-07-12/welcome</id>
+   <id>http://localhost:4010/blogs/2015-07-12/welcome</id>
    <content type="html">&lt;p&gt;The official course description is available on Programs and Courses linked here: &lt;a href=&quot;http://programsandcourses.anu.edu.au/course/ENGN2228&quot;&gt;ENGN2228 Signal Processing&lt;/a&gt;.  This course as part of the &lt;a href=&quot;http://programsandcourses.anu.edu.au/major/ELCO-MAJ&quot;&gt;Electronics and Communication Systems Major&lt;/a&gt; but it can also be done as an elective.&lt;/p&gt;
 
 &lt;p&gt;Site navigation is through the slideout menu on the left.  Start exploring.&lt;/p&gt;

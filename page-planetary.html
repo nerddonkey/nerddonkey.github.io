@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    RAK Projects &middot; Planet Astrophotography
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="/css/merged.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+
+  <link rel="stylesheet" href="/css/sigpro.css">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/public/head2.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- javascript -->
+  
+  <script type="text/javascript">
+    window.onload=function() {
+      var links = document.links;
+      for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+        if (links[i].hostname != window.location.hostname) {
+          links[i].target = '_blank';
+        }
+      }
+    }
+  </script>
+
+
+  <!-- fa fontawesome icon font -->
+  <script src="https://use.fontawesome.com/cd1c0384f8.js"></script>
+
+  <!-- faa fontawesome animations -->
+  <link rel="stylesheet" href="/css/font-awesome-animation.css">
+
+  <!-- RAK style embellishments and -->
+  <style type="text/css">
+    .base03 { background: rgba(121, 115, 121, 0.6); }
+    .base07 { background: rgba(255, 255, 255, 0.6); }
+    .base08 { background: rgba(221, 70, 76, 0.6); }
+    .base09 { background: rgba(253, 139, 25, 0.6); }
+    .base0A { background: rgba(253, 204, 89, 0.6); }
+    .base0B { background: rgba(143, 193, 62, 0.6); }
+    .base0C { background: rgba(20, 155, 147, 0.6); }
+    .base0D { background: rgba(18, 144, 191, 0.6); }
+    .base0E { background: rgba(200, 94, 124, 0.6); }
+    .base0F { background: rgba(179, 53, 8, 0.6); }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Flexslider Library  -->
+  <link rel="stylesheet" href="/css/flexslider.css" type="text/css">
+  <link rel="stylesheet" href="/css/flexslider-fix.css" type="text/css">
+  <script src="/js/jquery.flexslider-min.js"></script>
+  <!-- Initialisation Code  -->
+  <script src="/js/app.js"></script>
+ 
+  <script>
+  $(document).ready(function(){
+    $("table#major tr:contains('ENGN2228')").addClass("base08");
+    $("table#minor tr:contains('ENGN2228')").addClass("base0C");
+    $("table#activity tr:contains('Exam')").addClass("base03");
+    $("table#activity tr:contains('Assignment')").addClass("base09");
+    $("table#activity tr:contains('Exam') td").css({ "height": "68px" });
+
+    $("table tr:contains('Lecture'), table#activity tr:contains('Lecture')").addClass("base08");
+    $("table tr:contains('Drop-in')").addClass("base09");
+    $("table tr:contains('CLAB')").addClass("base0A");
+    $("table tr:contains('HLAB')").addClass("base0B");
+    $("table#activity tr:contains('Tutorial')").addClass("base0D");
+    $("table#assessment tr:contains('TOTAL')").addClass("base0E");
+    $("table#assessment tr:contains('Tutorial')").addClass("base0D");
+    $("table#assessment tr:contains('Mid-Semester Exam')").addClass("base03");
+    $("table#assessment tr:contains('Final Exam')").addClass("base03");
+    $("table#assessment tr:contains('ASSN')").addClass("base09");
+    $("table#instructors tr:contains('Lecturer')").addClass("base0B");
+    $("table#instructors tr:contains('Tutor')").addClass("base0D");
+    $("table#instructors tr:contains('Electronics Lab')").addClass("base08");
+    // $("table#activity tr:contains('break')").addClass("base03");
+    $("table#activity tr:contains('Module')").addClass("base07");
+    $("table#activity tr:contains('break') td").css({ "height": "98px" });
+    $("table#activity tr:contains('Module') td").css({
+      "text-align": "center",
+      "font-size": "120%",
+      "border": "0"
+    });
+    $("table a").attr("target", "_blank");
+    // $("table a").attr("type", "application/pdf");
+  });
+  </script>
+
+  <!-- mathjax -->
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG.js">
+  </script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      TeX: { equationNumbers: { autoNumber: "AMS" } },
+      SVG: { scale: 90, blacker: 10 }
+    });
+  </script>
+</head>
+
+<body class="theme-base-RAK sidebar-overlay">
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+<div class="sidebar" id="sidebar">  <!-- Toggleable sidebar -->
+  <div class="sidebar-item">
+    <p class="cent smll">Website for:</p> <p class="cent"><b>RAK<br>&mdash; Projects &mdash;</b></p>
+  </div>
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item " href="/index.html"><i class="fa fa-institution fa-fw" aria-hidden="true"></i>&nbsp;Home Page</a>
+    <a class="sidebar-nav-item active" href="/page-planetary.html"><i class="fa fa-camera fa-fw fa-fw" aria-hidden="true"></i>&nbsp;Planet Astrophotography</a>
+    <a class="sidebar-nav-item" href="/page-wo.html"><i class="fa fa-camera fa-fw fa-fw" aria-hidden="true"></i>&nbsp;Zenithstar 73 APO Astrophotography</a>
+    <a class="sidebar-nav-item" href="/resources/1-demo.html">&emsp;&ensp;<i class="fa fa-bug fa-fw fa-fw" aria-hidden="true"></i>&nbsp;Demo</a>
+  </nav>
+  <div class="sidebar-item">
+    <p class="cent smll">Site Version: <b>Thu 18 Apr 2019 23:08</b><br>
+    &copy; 2019. All rights reserved.<br><br>
+    Created with <a href="http://jekyllrb.com">Jekyll</a>,
+     <a href="https://github.com/poole/lanyon">Lanyon</a>
+    & <a href="https://cloudcannon.com">cloud<b>cannon</b>.</p>
+  </div>
+</div>
+
+<div class="wrap"> <!-- Wrap is the content to shift when toggling the sidebar -->
+  <div class="masthead">
+    <div class="container">
+      <h3 class="masthead-title" style="white-space: nowrap; line-height:18px;">
+        <img src="/images/RAK-logo.jpg" style="margin:-5px 0.7rem 3px 1.3rem; display:inline-block; width:40%; max-width:250px; min-width:95px; border:none blue 1px; vertical-align:top;"><span style="display:inline-block; vertical-align:top; border:none blue 1px;">
+        <a href="/index.html" title="Home">RAK Projects Geriatric Ramblings</a>
+        <div style="line-height:18%;">
+          <br>
+        </div>
+        <small>Australia Somewhere&nbsp;&copy;&nbsp;2019.</small></span>
+      </h3>
+    </div>
+  </div>
+
+  <div class="container content">
+    <div class="page">
+<h1 class="page-title"><span class="no-print"><i class="fa fa-camera fa-fw fa-fw" aria-hidden="true"></i>&nbsp;</span>Planet Astrophotography</h1>
+
+  
+  <div class="flexslider">
+    <ul class="slides">
+      
+      <li>
+        <img src="/images/carousel-planetary/M-SCT001_1-7.jpg">
+      </li>
+      
+      <li>
+        <img src="/images/carousel-planetary/sesto_senso.jpg">
+      </li>
+      
+      <li>
+        <img src="/images/carousel-planetary/PMT-2513_1-8.jpg">
+      </li>
+      
+      <li>
+        <img src="/images/carousel-planetary/ptr_1250_pmttring1250.jpg">
+      </li>
+      
+      <li>
+        <img src="/images/carousel-planetary/tst2rot_b.jpg">
+      </li>
+      
+      <li>
+        <img src="/images/carousel-planetary/21mmExtend600x600-460x460.jpg">
+      </li>
+      
+      <li>
+        <img src="/images/carousel-planetary/dibu1-1024x1024.jpg">
+      </li>
+      
+      <li>
+        <img src="/images/carousel-planetary/Anti-dew-Kit-NEW-1024x1024.jpg">
+      </li>
+      
+      <li>
+        <img src="/images/carousel-planetary/183MM-Pro13-460x460.jpg">
+      </li>
+      
+    </ul>
+  </div>
+  
+
+  <h2 id="goal">Goal</h2>
+
+<p>Explore the wonders of the Universe and leave Earth for the narrow minded people. Target the Solar System (mostly Jupiter, Saturn and Mars) and elsewhere look at Deep Space objects.</p>
+
+<h3 id="equipment">Equipment</h3>
+
+<ul>
+  <li>You need big aperture (20cm +) and long focal length so a Cassegrain/SCT and a Barlow/Powermate work best.</li>
+  <li>The physical length of camera and opticals as short as possible</li>
+  <li><a href="http://www.televue.com/engine/TV3b_page.asp?id=85">Spacing</a> for the Powermate should be as close as possible to recommended distance to sensor (<code class="highlighter-rouge">56mm</code>)</li>
+  <li>You don’t need good off-axis optical performance – a standard SCT will perform as well as an EdgeHD or ACF (low off-axis coma scopes).</li>
+</ul>
+
+<h3 id="operationalobservational-aspects">Operational/Observational Aspects</h3>
+
+<ul>
+  <li>Collimate your telescope; then collimate again because it has to be perfect.</li>
+  <li>With a SCT, lock down your primary focus (which moves the main mirror); if you change this setting then you’ll probably need to repeat collimation.</li>
+  <li>At the high magnification required the atmospheric dispersion can be significant so shoot the planet away from the horizon; ideally around the meridian.  Atmospheric dispersion correctors do work but are fiddly to adjust and need continupus adjustment as the planet changes altitude.</li>
+</ul>
+
+<h3 id="components-in-order-from-telescope-towards-camera">Components (in order from telescope towards camera)</h3>
+
+<ol>
+  <li><strong>GSO Crayford Focuser for SCT 10:1 (2 Inch)</strong>  – <a href="http://www.gs-telescope.com/content.asp?id=139"><code class="highlighter-rouge">M-SCT001</code> <i class="fa fa-external-link fa-lg fa-fw" aria-hidden="true"></i></a>
+    <ul>
+      <li>to enable motorized focusing (with a Sento Senso)</li>
+      <li>1.25” adapter is included and used with the above focuser</li>
+    </ul>
+  </li>
+  <li><strong>Sento Senso</strong> – <a href="https://www.primalucelab.com/astronomy/sesto-senso-robotic-focusing-motor.html"><code class="highlighter-rouge">SESTOSENSO</code> <i class="fa fa-external-link fa-lg fa-fw" aria-hidden="true"></i></a>
+    <ul>
+      <li>robotic focusing motor</li>
+      <li>can compensate for focal shift with different filters (even if they are meant to be parfocal – they are never exactly parfocal)</li>
+    </ul>
+  </li>
+  <li><strong>Tele Vue Powermate 2.5x</strong> – <a href="http://www.televue.com/engine/TV3b_page.asp?id=53&amp;Tab=_spec"><code class="highlighter-rouge">PMT-2513</code> <i class="fa fa-external-link fa-lg fa-fw" aria-hidden="true"></i></a>
+    <ul>
+      <li>one of the most highly regarded image magnifiers</li>
+    </ul>
+  </li>
+  <li><strong>Tele Vue 1.25” Powermate T-Ring Adapter</strong> – <a href="http://www.televue.com/engine/TV3b_page.asp?id=53&amp;Tab=_acc"><code class="highlighter-rouge">PTR-1250</code> <i class="fa fa-external-link fa-lg fa-fw" aria-hidden="true"></i></a>
+    <ul>
+      <li>Camera-side T-ring shoulder is what we take as the optical reference point <code class="highlighter-rouge">0mm</code></li>
+      <li>Camera-side thread: <code class="highlighter-rouge">T2 male (M42x0.75)</code></li>
+      <li>Optical reference: <code class="highlighter-rouge">0mm</code></li>
+    </ul>
+  </li>
+  <li><strong>TS Optics T2 quick changer and 360° rotator</strong> – <a href="https://www.teleskop-express.de/shop/product_info.php/info/p5547_TS-Optics-T2-Gewinde-360--Rotation---Schnellkupplung---nur-5-5mm-kurz.html"><code class="highlighter-rouge">TST2Rot</code> <i class="fa fa-external-link fa-lg fa-fw" aria-hidden="true"></i></a>
+    <ul>
+      <li>Enables one point of rotational adjustment of camera axes (with telescope axes)</li>
+      <li>Telescope-side thread: <code class="highlighter-rouge">T2 female (M42x0.75)</code></li>
+      <li>Camera-side thread: <code class="highlighter-rouge">T2 male (M42x0.75)</code></li>
+      <li>Optical length (w/o T2 male thread): <code class="highlighter-rouge">5.5mm</code></li>
+      <li>Additional Optical length due to Powermate T-Ring Adapter standoff: <code class="highlighter-rouge">2.25mm</code></li>
+    </ul>
+  </li>
+  <li><strong>ZWO 21mm T2 to T2 Extension T-Ring Spacer</strong> – <a href="https://astronomy-imaging-camera.com/product/m42-m42-extender-21-mm-length"><code class="highlighter-rouge">SKU: ZWO-EFW-8x1.25</code> <i class="fa fa-external-link fa-lg fa-fw" aria-hidden="true"></i></a>
+    <ul>
+      <li>Spacer to get near the correct backfocus for the Powermate (T-Ring Adapter shoulder to the sensor)</li>
+      <li>Telescope-side thread: <code class="highlighter-rouge">T2 female (M42x0.75)</code></li>
+      <li>Camera-side thread: <code class="highlighter-rouge">T2 male (M42x0.75)</code></li>
+      <li>Optical length (w/o T2 male thread): <code class="highlighter-rouge">21mm</code></li>
+    </ul>
+  </li>
+  <li><strong>ZWO EFW Filter Wheel 8×1.25”</strong> – <a href="https://astronomy-imaging-camera.com/product/zwo-efw-8x-1-25-inch-or-7x-36mm"><code class="highlighter-rouge">SKU: ZWO-EFW-8x1.25</code> <i class="fa fa-external-link fa-lg fa-fw" aria-hidden="true"></i></a>
+    <ul>
+      <li>Uses the new ZWO LRGB filter set</li>
+      <li>Telescope-side thread: <code class="highlighter-rouge">T2 female (M42x0.75)</code></li>
+      <li>Camera-side thread: <code class="highlighter-rouge">T2 female (M42x0.75)</code></li>
+      <li>Optical length: <code class="highlighter-rouge">20mm</code></li>
+    </ul>
+  </li>
+  <li><strong>ZWO Anti-dew heater strip</strong> (not used; for DSO setup) – <a href="https://astronomy-imaging-camera.com/product/anti-dew-heater"><code class="highlighter-rouge">SKU: ZWO-Anti-dew</code> <i class="fa fa-external-link fa-lg fa-fw" aria-hidden="true"></i></a>
+    <ul>
+      <li>Optical length: <code class="highlighter-rouge">~0.5mm</code></li>
+    </ul>
+  </li>
+  <li><strong>ZWO ASI183MM Pro</strong> (cooling not used; for DSO setup) – <a href="https://astronomy-imaging-camera.com/product/asi183mm-pro-mono"><code class="highlighter-rouge">SKU: ASI183MM-P</code> <i class="fa fa-external-link fa-lg fa-fw" aria-hidden="true"></i></a>
+    <ul>
+      <li>Resolution: <code class="highlighter-rouge">5496 pixels x 3672 pixels</code> (<code class="highlighter-rouge">20.18 MP</code>)</li>
+      <li>Sensor Size: <code class="highlighter-rouge">13.19mm x 8.8mm</code></li>
+      <li>Pixel Size: <code class="highlighter-rouge">2.4μm x 2.4μm</code></li>
+      <li>Telescope-side thread: <code class="highlighter-rouge">T2 male (M42x0.75)</code></li>
+      <li>Optical length (w/o T2 male thread and to sensor): <code class="highlighter-rouge">6.5mm</code> (back focus)</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="spacings">Spacings</h3>
+
+<h4 id="powermatesensor-separation">Powermate–Sensor Separation</h4>
+
+<p>With all these bits and bobs the distance from the Powermate T-Ring Adapter to the sensor is:</p>
+
+<blockquote>
+  <p><code class="highlighter-rouge">5.5mm + 2.25mm + 21mm + 20mm + 0.5mm + 6.5mm = 55.75mm</code></p>
+</blockquote>
+
+<p>This is very close to the recommended value of <a href="http://www.televue.com/engine/TV3b_page.asp?id=85"><code class="highlighter-rouge">56mm</code></a>.  But it is clear from <a href="http://www.televue.com/engine/TV3b_page.asp?id=123&amp;Tab=_app#.VeloqIsdUqY">Tele Vue
+magnification information</a> that the powermates are quite tolerant to a variation in spacings.</p>
+
+<p>(Based on actual measurements when imaging Saturn the powermate is running at a magnification of <code class="highlighter-rouge">2.4x</code>. Comparing to <a href="http://www.televue.com/engine/TV3b_page.asp?id=123&amp;Tab=_app#.VeloqIsdUqY">Tele Vue
+magnification information</a> the top surface of the powermate
+eyepiece holder is at an effective distance of <code class="highlighter-rouge">41mm</code> relative to where the Powermate T-Ring Adapter camera-side shoulder would be so
+we seem to be operating at <code class="highlighter-rouge">15mm</code> on the plot and that appears to be around <code class="highlighter-rouge">2.4x</code>.)</p>
+
+<h4 id="rear-cellpowermate-separation">Rear-cell–Powermate Separation</h4>
+
+<p>It isn’t clear from any documentation what is Meade’s preferred/design position of the focal plane relative
+to the SCT rear cell (actually the camera-side shoulder of the <code class="highlighter-rouge">2"-24</code> adapter), which is adjusted by the primary mirror focuser.
+One rough guide is the <a href="https://agenaastro.com/meade-62-t-adapter.html">Meade camera T-adapter</a>
+which has an optical length of <code class="highlighter-rouge">45mm</code> which when used with an EOS T-ring and EOS Canon SLR camera body (backfocus of <code class="highlighter-rouge">44mm</code>)
+should give:</p>
+
+<blockquote>
+  <p><code class="highlighter-rouge">45mm + 11mm + 44mm = 100mm</code></p>
+</blockquote>
+
+<p>Now because the Crayford focuser is not so shallow our effective focal plane mights be at around <code class="highlighter-rouge">150mm</code>, which
+is something that can be checked at the telescope (by projecting the moon to a translucent film when the
+powermate is removed).  The powermate–Sensor separation should be more important than the rear-cell–powermate
+separation.</p>
+
+<hr />
+
+<p>Version: <strong>18 April 2019 23:08</strong></p>
+
+
+ </div>
+
+
+
+
+  </div>
+</div>
+
+<label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+<script>
+  (function(document) {
+    var toggle = document.querySelector('.sidebar-toggle');
+    var sidebar = document.querySelector('#sidebar');
+    var checkbox = document.querySelector('#sidebar-checkbox');
+    document.addEventListener('click', function(e) {
+      var target = e.target;
+      if(!checkbox.checked || sidebar.contains(target) || (target === checkbox || target === toggle)) return;
+      checkbox.checked = false;
+    }, false);
+  })(document);
+</script>
+</body>
