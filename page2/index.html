@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    RAK Projects &middot; Home Page
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="/css/merged.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+
+  <link rel="stylesheet" href="/css/sigpro.css">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/public/head2.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- javascript -->
+  
+  <script type="text/javascript">
+    window.onload=function() {
+      var links = document.links;
+      for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+        if (links[i].hostname != window.location.hostname) {
+          links[i].target = '_blank';
+        }
+      }
+    }
+  </script>
+
+
+  <!-- fa fontawesome icon font -->
+  <script src="https://use.fontawesome.com/cd1c0384f8.js"></script>
+
+  <!-- faa fontawesome animations -->
+  <link rel="stylesheet" href="/css/font-awesome-animation.css">
+
+  <!-- RAK style embellishments and -->
+  <style type="text/css">
+    .base03 { background: rgba(121, 115, 121, 0.6); }
+    .base07 { background: rgba(255, 255, 255, 0.6); }
+    .base08 { background: rgba(221, 70, 76, 0.6); }
+    .base09 { background: rgba(253, 139, 25, 0.6); }
+    .base0A { background: rgba(253, 204, 89, 0.6); }
+    .base0B { background: rgba(143, 193, 62, 0.6); }
+    .base0C { background: rgba(20, 155, 147, 0.6); }
+    .base0D { background: rgba(18, 144, 191, 0.6); }
+    .base0E { background: rgba(200, 94, 124, 0.6); }
+    .base0F { background: rgba(179, 53, 8, 0.6); }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Flexslider Library  -->
+  <link rel="stylesheet" href="/css/flexslider.css" type="text/css">
+  <link rel="stylesheet" href="/css/flexslider-fix.css" type="text/css">
+  <script src="/js/jquery.flexslider-min.js"></script>
+  <!-- Initialisation Code  -->
+  <script src="/js/app.js"></script>
+ 
+  <script>
+  $(document).ready(function(){
+    $("table#major tr:contains('ENGN2228')").addClass("base08");
+    $("table#minor tr:contains('ENGN2228')").addClass("base0C");
+    $("table#activity tr:contains('Exam')").addClass("base03");
+    $("table#activity tr:contains('Assignment')").addClass("base09");
+    $("table#activity tr:contains('Exam') td").css({ "height": "68px" });
+
+    $("table tr:contains('Lecture'), table#activity tr:contains('Lecture')").addClass("base08");
+    $("table tr:contains('Drop-in')").addClass("base09");
+    $("table tr:contains('CLAB')").addClass("base0A");
+    $("table tr:contains('HLAB')").addClass("base0B");
+    $("table#activity tr:contains('Tutorial')").addClass("base0D");
+    $("table#assessment tr:contains('TOTAL')").addClass("base0E");
+    $("table#assessment tr:contains('Tutorial')").addClass("base0D");
+    $("table#assessment tr:contains('Mid-Semester Exam')").addClass("base03");
+    $("table#assessment tr:contains('Final Exam')").addClass("base03");
+    $("table#assessment tr:contains('ASSN')").addClass("base09");
+    $("table#instructors tr:contains('Lecturer')").addClass("base0B");
+    $("table#instructors tr:contains('Tutor')").addClass("base0D");
+    $("table#instructors tr:contains('Electronics Lab')").addClass("base08");
+    // $("table#activity tr:contains('break')").addClass("base03");
+    $("table#activity tr:contains('Module')").addClass("base07");
+    $("table#activity tr:contains('break') td").css({ "height": "98px" });
+    $("table#activity tr:contains('Module') td").css({
+      "text-align": "center",
+      "font-size": "120%",
+      "border": "0"
+    });
+    $("table a").attr("target", "_blank");
+    // $("table a").attr("type", "application/pdf");
+  });
+  </script>
+
+  <!-- mathjax -->
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG.js">
+  </script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      TeX: { equationNumbers: { autoNumber: "AMS" } },
+      SVG: { scale: 90, blacker: 10 }
+    });
+  </script>
+</head>
+
+<body class="theme-base-RAK sidebar-overlay">
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+<div class="sidebar" id="sidebar">  <!-- Toggleable sidebar -->
+  <div class="sidebar-item">
+    <p class="cent smll">Website for:</p> <p class="cent"><b>RAK<br>&mdash; Projects &mdash;</b></p>
+  </div>
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item " href="/index.html"><i class="fa fa-institution fa-fw" aria-hidden="true"></i>&nbsp;Home Page</a>
+    <a class="sidebar-nav-item" href="/1-planetpage.html"><i class="fa fa-camera fa-fw fa-fw" aria-hidden="true"></i>&nbsp;Planet Astrophotography</a>
+    <a class="sidebar-nav-item" href="/resources/1-demo.html">&emsp;&ensp;<i class="fa fa-bug fa-fw fa-fw" aria-hidden="true"></i>&nbsp;Demo</a>
+  </nav>
+  <div class="sidebar-item">
+    <p class="cent smll">Site Version: <b>Fri 22 Mar 2019 20:02</b><br>
+    &copy; 2019. All rights reserved.<br><br>
+    Created with <a href="http://jekyllrb.com">Jekyll</a>,
+     <a href="https://github.com/poole/lanyon">Lanyon</a>
+    & <a href="https://cloudcannon.com">cloud<b>cannon</b>.</p>
+  </div>
+</div>
+
+<div class="wrap"> <!-- Wrap is the content to shift when toggling the sidebar -->
+  <div class="masthead">
+    <div class="container">
+      <h3 class="masthead-title" style="white-space: nowrap; line-height:18px;">
+        <img src="/images/RAK-logo.png" style="margin:-5px 0.7rem 3px 1.3rem; display:inline-block; width:30%; max-width:150px; min-width:95px; border:none blue 1px; vertical-align:top;"><span style="display:inline-block; vertical-align:top; border:none blue 1px;">
+        <a href="/index.html" title="Home">RAK Projects Geriatric Ramblings</a>
+        <div style="line-height:18%;">
+          <br>
+        </div>
+        <small>Australia Somewhere&nbsp;&copy;&nbsp;2019.</small></span>
+      </h3>
+    </div>
+  </div>
+
+  <div class="container content">
+    
+<!-- To have blog pagination work then Jekyll needs an index.html (not index.md).  Here we capture markdown and explicitly markdownify it, see http://ricostacruz.com/til/markdown-in-jekyll.html -->
+
+<!-- ![][splash] -->
+
+<h1 class="no_toc" id="rak-projects-geriatric-ramblings"><span class="no-print"><i class="fa fa-institution fa-fw" aria-hidden="true"></i> </span>RAK Projects Geriatric Ramblings</h1>
+
+<h3 class="no_toc toc_title no-print" id="page-index">Page Index</h3>
+
+<ul class="no-print" id="markdown-toc">
+  <li><a href="#1course-outline-" id="markdown-toc-1course-outline-">1. Course Outline <i class="fa fa-cloud-download fa-lg fa-fw" aria-hidden="true"></i></a></li>
+  <li><a href="#2anu-wattle-" id="markdown-toc-2anu-wattle-">2. ANU Wattle <i class="fa fa-external-link fa-lg fa-fw" aria-hidden="true"></i></a></li>
+  <li><a href="#3engn2228-" id="markdown-toc-3engn2228-">3. ENGN2228 <i class="fa fa-external-link fa-lg fa-fw" aria-hidden="true"></i></a></li>
+  <li><a href="#4how-to-use-this-site" id="markdown-toc-4how-to-use-this-site">4. How to Use this Site</a></li>
+</ul>
+
+<h2 id="1course-outline-">1. Course Outline <a href="/downloads/ADMIN/CourseOutline.pdf"><i class="fa fa-cloud-download fa-lg fa-fw" aria-hidden="true"></i></a></h2>
+
+<p>The “Course Outline” is an official description of Geriatric Ramblings.  Here is a brief version:</p>
+
+<blockquote>
+  <p>My retirement obsessions and projects.</p>
+</blockquote>
+
+<h2 id="2anu-wattle-">2. ANU Wattle <a href="https://wattle.anu.edu.au"><i class="fa fa-external-link fa-lg fa-fw" aria-hidden="true"></i></a></h2>
+
+<p>Wattle is a Moodle site ANU uses: to provide online delivery of course material (echo360); for laboratory (CLAB and HLAB) and tutorial (TUTE) group selection; for submission of assessment tasks; to enable participation in discussions (forums), provide gradebook feedback and support collaboration.  RAK Projects Geriatric Ramblings uses Wattle for course administration.</p>
+
+<p>This website is used for: course content; handouts for laboratories and tutorials, downloads for course lecture slides; downloads for course lecture notes/bricks; additional resources and links; updates on materials, etc.</p>
+
+<h2 id="3engn2228-">3. ENGN2228 <a href="http://programsandcourses.anu.edu.au/course/ENGN2228"><i class="fa fa-external-link fa-lg fa-fw" aria-hidden="true"></i></a></h2>
+
+<p>Official ENGN2228 course information on ANU Programs and Courses.</p>
+
+<p>This course as part of the <a href="http://programsandcourses.anu.edu.au/major/ELCO-MAJ">Electronics and Communication Systems Major</a> but it can also be done as an elective.</p>
+
+<p>The course title <em>“Signal Processing”</em> is an alternative to <em>“Signals and Systems”</em>, the name of the textbook.</p>
+
+<p class="no-print">What is Signal Processing?  Check out the videos below.</p>
+
+<div class="wide-block no-print">
+  <iframe width="640" height="390" src="https://www.youtube.com/embed/EErkgr1MWw0" frameborder="0" allowfullscreen="">
+ </iframe>
+</div>
+
+<div class="wide-block no-print">
+  <iframe width="640" height="390" src="https://www.youtube.com/embed/mexN6d8QF9o" frameborder="0" allowfullscreen="">
+ </iframe>
+</div>
+
+<h2 class="no-print" id="4how-to-use-this-site">4. How to Use this Site</h2>
+
+<p class="no-print"><img align="bottom" style="margin:0px 0px 0px 0px; float:left; width:48px" src="/images/nav.png" alt="" /> Site navigation is accessed through the slideout menu at the upper left of each page.  Start exploring.</p>
+
+<hr />
+
+<!-- [splash]: /images/splash.png -->
+
+
+
+  </div>
+</div>
+
+<label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+<script>
+  (function(document) {
+    var toggle = document.querySelector('.sidebar-toggle');
+    var sidebar = document.querySelector('#sidebar');
+    var checkbox = document.querySelector('#sidebar-checkbox');
+    document.addEventListener('click', function(e) {
+      var target = e.target;
+      if(!checkbox.checked || sidebar.contains(target) || (target === checkbox || target === toggle)) return;
+      checkbox.checked = false;
+    }, false);
+  })(document);
+</script>
+</body>

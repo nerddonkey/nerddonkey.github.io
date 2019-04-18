@@ -1,0 +1,156 @@
+/* in the tables make the row heights big enough to hold two lines of text */
+
+
+/*table#topics td, table#assessment td {
+  height: 48px;
+}*/
+
+/* fade the first column background */
+
+table#activity tr td:nth-child(1) {
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid #000000;
+  border-right: 5px solid #000000
+}
+
+@media (max-width: 38em) {
+  table#activity tr td:nth-child(3) {
+    font-size: 12px;
+  }
+}
+
+@media print {
+  /*table#activity tr td:nth-child(2) {
+    font-size: 12px;
+  }*/
+  table#activity {
+    font-size: 12px;
+  }
+}
+
+/* custom theme colors; select in _config.yml with entry "class: theme-base-RAK" */
+
+.theme-base-RAK .sidebar, .theme-base-RAK .sidebar-toggle:active, .theme-base-RAK #sidebar-checkbox:checked~.sidebar-toggle {
+  background-color: #2f2f2f;
+}
+
+.theme-base-RAK .container a, .theme-base-RAK .sidebar-toggle, .theme-base-RAK .related-posts li a:hover {
+  color: #7f3f3f;
+}
+
+.theme-base-RAK .container a {
+  color: black;
+  /*color: #7f3f3f;*/
+}
+
+table tr td {
+  height: 48px
+}
+
+table#instructors a {
+  /*color: black;*/
+  font-weight: normal;
+  text-decoration: none
+}
+
+/*table#activity a, table#assessment a, table#hazard a, table#major a, table#minor a, table#resid a {
+  color: black
+}*/
+
+
+table, tr, td, th {
+  border: 2px solid #6f6f6f
+}
+
+table#new-activity tr, table#new-activity td {
+  border: 2px solid white
+}
+
+table#new-activity th {
+  border: 2px solid #4f4f4f
+}
+
+
+table#new-activity tr td {
+  border: 2px solid black;
+  text-align: center;
+  color: black
+}
+
+table#new-activity tr:not(.active) td:nth-child(1) {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+table#new-activity tr:not(.active) td {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+table#new-activity tr.active td:nth-child(1) {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-right: 6px solid black
+}
+
+table#new-activity tr.module td {
+  font-size: 120%;
+  border: 0 solid white;
+}
+
+table#cotable tr td {
+  height: 28px
+}
+
+blockquote {
+  padding: .5rem 1rem;
+  margin: .8rem 1rem;
+  color: black;
+  border-left: .35rem solid rgba(127, 63, 63, .4)
+}
+
+blockquote.summary {
+  font-family: Arial, "PT Sans", Helvetica, sans-serif;
+  font-size: 110%;
+  color: black
+}
+blockquote.summary strong {
+  color: rgba(127, 63, 63, 1)
+}
+
+figure {
+  float: right;
+  min-width: 150px;
+  width: 50%;
+  text-align: center;
+  font-style: italic;
+  font-size: smaller;
+  text-indent: 0;
+  border: thin silver solid;
+  margin: 1.2em;
+  padding: 01.5em;
+}
+img.scaled {
+  width: 100%;
+}
+
+@media print {
+  .theme-base-RAK .container a, .theme-base-RAK .sidebar-toggle, .theme-base-RAK .related-posts li a:hover {
+    color: #000000
+  }
+  table#topics td, table#assessment td, table#hazard td {
+    height: 28px
+  }
+  blockquote {
+    padding: 0;
+    margin: 0;
+    border-left: 0
+  }
+}
+
+.fapretty {
+  padding: .1rem .1rem;
+  color: black;
+  background-color: rgba(255, 255, 255, .4);
+}
+
+code {
+  background-color: rgba(255, 255, 255, .5);
+}

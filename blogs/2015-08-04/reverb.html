@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    RAK Projects &middot; Poor-man's Reverberation Modelling with MATLAB&reg;
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="/css/merged.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+
+  <link rel="stylesheet" href="/css/sigpro.css">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/public/head2.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- javascript -->
+  
+  <script type="text/javascript">
+    window.onload=function() {
+      var links = document.links;
+      for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+        if (links[i].hostname != window.location.hostname) {
+          links[i].target = '_blank';
+        }
+      }
+    }
+  </script>
+
+
+  <!-- fa fontawesome icon font -->
+  <script src="https://use.fontawesome.com/cd1c0384f8.js"></script>
+
+  <!-- faa fontawesome animations -->
+  <link rel="stylesheet" href="/css/font-awesome-animation.css">
+
+  <!-- RAK style embellishments and -->
+  <style type="text/css">
+    .base03 { background: rgba(121, 115, 121, 0.6); }
+    .base07 { background: rgba(255, 255, 255, 0.6); }
+    .base08 { background: rgba(221, 70, 76, 0.6); }
+    .base09 { background: rgba(253, 139, 25, 0.6); }
+    .base0A { background: rgba(253, 204, 89, 0.6); }
+    .base0B { background: rgba(143, 193, 62, 0.6); }
+    .base0C { background: rgba(20, 155, 147, 0.6); }
+    .base0D { background: rgba(18, 144, 191, 0.6); }
+    .base0E { background: rgba(200, 94, 124, 0.6); }
+    .base0F { background: rgba(179, 53, 8, 0.6); }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Flexslider Library  -->
+  <link rel="stylesheet" href="/css/flexslider.css" type="text/css">
+  <link rel="stylesheet" href="/css/flexslider-fix.css" type="text/css">
+  <script src="/js/jquery.flexslider-min.js"></script>
+  <!-- Initialisation Code  -->
+  <script src="/js/app.js"></script>
+ 
+  <script>
+  $(document).ready(function(){
+    $("table#major tr:contains('ENGN2228')").addClass("base08");
+    $("table#minor tr:contains('ENGN2228')").addClass("base0C");
+    $("table#activity tr:contains('Exam')").addClass("base03");
+    $("table#activity tr:contains('Assignment')").addClass("base09");
+    $("table#activity tr:contains('Exam') td").css({ "height": "68px" });
+
+    $("table tr:contains('Lecture'), table#activity tr:contains('Lecture')").addClass("base08");
+    $("table tr:contains('Drop-in')").addClass("base09");
+    $("table tr:contains('CLAB')").addClass("base0A");
+    $("table tr:contains('HLAB')").addClass("base0B");
+    $("table#activity tr:contains('Tutorial')").addClass("base0D");
+    $("table#assessment tr:contains('TOTAL')").addClass("base0E");
+    $("table#assessment tr:contains('Tutorial')").addClass("base0D");
+    $("table#assessment tr:contains('Mid-Semester Exam')").addClass("base03");
+    $("table#assessment tr:contains('Final Exam')").addClass("base03");
+    $("table#assessment tr:contains('ASSN')").addClass("base09");
+    $("table#instructors tr:contains('Lecturer')").addClass("base0B");
+    $("table#instructors tr:contains('Tutor')").addClass("base0D");
+    $("table#instructors tr:contains('Electronics Lab')").addClass("base08");
+    // $("table#activity tr:contains('break')").addClass("base03");
+    $("table#activity tr:contains('Module')").addClass("base07");
+    $("table#activity tr:contains('break') td").css({ "height": "98px" });
+    $("table#activity tr:contains('Module') td").css({
+      "text-align": "center",
+      "font-size": "120%",
+      "border": "0"
+    });
+    $("table a").attr("target", "_blank");
+    // $("table a").attr("type", "application/pdf");
+  });
+  </script>
+
+  <!-- mathjax -->
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG.js">
+  </script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      TeX: { equationNumbers: { autoNumber: "AMS" } },
+      SVG: { scale: 90, blacker: 10 }
+    });
+  </script>
+</head>
+
+<body class="theme-base-RAK sidebar-overlay">
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+<div class="sidebar" id="sidebar">  <!-- Toggleable sidebar -->
+  <div class="sidebar-item">
+    <p class="cent smll">Website for:</p> <p class="cent"><b>RAK<br>&mdash; Projects &mdash;</b></p>
+  </div>
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item " href="/index.html"><i class="fa fa-institution fa-fw" aria-hidden="true"></i>&nbsp;Home Page</a>
+    <a class="sidebar-nav-item" href="/1-planetpage.html"><i class="fa fa-camera fa-fw fa-fw" aria-hidden="true"></i>&nbsp;Planet Astrophotography</a>
+    <a class="sidebar-nav-item" href="/resources/1-demo.html">&emsp;&ensp;<i class="fa fa-bug fa-fw fa-fw" aria-hidden="true"></i>&nbsp;Demo</a>
+  </nav>
+  <div class="sidebar-item">
+    <p class="cent smll">Site Version: <b>Fri 22 Mar 2019 20:02</b><br>
+    &copy; 2019. All rights reserved.<br><br>
+    Created with <a href="http://jekyllrb.com">Jekyll</a>,
+     <a href="https://github.com/poole/lanyon">Lanyon</a>
+    & <a href="https://cloudcannon.com">cloud<b>cannon</b>.</p>
+  </div>
+</div>
+
+<div class="wrap"> <!-- Wrap is the content to shift when toggling the sidebar -->
+  <div class="masthead">
+    <div class="container">
+      <h3 class="masthead-title" style="white-space: nowrap; line-height:18px;">
+        <img src="/images/RAK-logo.png" style="margin:-5px 0.7rem 3px 1.3rem; display:inline-block; width:30%; max-width:150px; min-width:95px; border:none blue 1px; vertical-align:top;"><span style="display:inline-block; vertical-align:top; border:none blue 1px;">
+        <a href="/index.html" title="Home">RAK Projects Geriatric Ramblings</a>
+        <div style="line-height:18%;">
+          <br>
+        </div>
+        <small>Australia Somewhere&nbsp;&copy;&nbsp;2019.</small></span>
+      </h3>
+    </div>
+  </div>
+
+  <div class="container content">
+    <div class="post">
+  <h2 class="post-title">Poor-man's Reverberation Modelling with MATLAB&reg;</h2>
+  <!-- <span class="post-date">04 Aug 2015</span> -->
+  <span class="post-date">Rodney Kennedy</span>
+  <p>Here we create an artificial simple reverberation using a convolution.  This is an example of a LTI system and we select the input to be any audio signal (<code>reverb-in.wav</code>) and the output will be the audio signal with reverberation/echo (<code>reverb-out.wav</code>) .</p>
+
+<h3 class="no_toc toc_title no-print" id="page-index">Page Index</h3>
+
+<ul class="no-print" id="markdown-toc">
+  <li><a href="#reverberation-is-convolution" id="markdown-toc-reverberation-is-convolution">Reverberation is Convolution</a></li>
+  <li><a href="#matlab-function--reverbm" id="markdown-toc-matlab-function--reverbm">MATLAB® Function — <code>reverb.m</code></a></li>
+  <li><a href="#output-plot--reverbpng" id="markdown-toc-output-plot--reverbpng">Output Plot — <code>reverb.png</code></a></li>
+  <li><a href="#downloads" id="markdown-toc-downloads">Downloads</a></li>
+</ul>
+
+<h3 id="reverberation-is-convolution">Reverberation is Convolution</h3>
+
+<p>Input sound is <script type="math/tex">x[n]</script> and output sound is the convolution</p>
+
+<script type="math/tex; mode=display">y[n]=x[n] \star h[n] = \sum_{k=-\infty}^{\infty} h[k]\,x[n-k]</script>
+
+<p>where <script type="math/tex">h[n]</script> models the reverberation (echo) system.</p>
+
+<p>Here we choose</p>
+
+<script type="math/tex; mode=display">h[n]=0.6\,\delta[n]+0.4\,\delta[n-3000]</script>
+
+<p>so <script type="math/tex">y[n]</script> becomes the sum of two (non-zero) terms</p>
+
+<script type="math/tex; mode=display">y[n]=\sum_{k\in\{0,3000\}} h[k]\,x[n-k]=0.6\,x[n]+0.4\,x[n-3000]</script>
+
+<p>The input sound files have a sample rate of 11,025 Hz, which means 3,000 samples is about 0.27 seconds.  So the reverberation has a direct path of magnitude 0.6 and an echo path of magnitude 0.4 with delay of 0.27 seconds.</p>
+
+<h3 id="matlab-function--reverbm">MATLAB® Function — <a href="/matlab/reverb.m"><code>reverb.m</code></a></h3>
+
+<figure class="highlight"><pre><code class="language-matlab" data-lang="matlab"><span class="c1">%REVERB This script reads in an audio file in wav format.  That audio</span>
+<span class="c1">%file happens to be sampled at 11.025kHz.  It applies a very simple LTI</span>
+<span class="c1">%system and writes out an output wav format audio file.  These audio files</span>
+<span class="c1">%need to be in a wav subdirectory.</span>
+<span class="n">fs</span><span class="o">=</span><span class="mi">11025</span><span class="p">;</span>
+
+<span class="c1">% read the sound and play it</span>
+<span class="n">x</span><span class="o">=</span><span class="nb">audioread</span><span class="p">(</span><span class="s1">'wav/reverb-in.wav'</span><span class="p">);</span>
+<span class="nb">sound</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">fs</span><span class="p">)</span>
+
+<span class="c1">% reverb settings</span>
+<span class="nb">clear</span> <span class="n">h</span><span class="p">;</span>
+<span class="n">h</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">=</span><span class="mf">0.6</span><span class="p">;</span>
+<span class="n">h</span><span class="p">(</span><span class="mi">3001</span><span class="p">)</span><span class="o">=+</span><span class="mf">0.4</span><span class="p">;</span>
+
+<span class="c1">% apply the reverb and play it</span>
+<span class="n">y</span> <span class="o">=</span> <span class="nb">conv</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">h</span><span class="p">);</span>
+<span class="c1">% pause; sound( y, fs )</span>
+<span class="nb">audiowrite</span><span class="p">(</span><span class="s1">'wav/reverb-out.wav'</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">fs</span><span class="p">);</span>
+
+<span class="c1">% slower</span>
+<span class="n">f8</span><span class="o">=</span><span class="mi">8000</span><span class="p">;</span>
+<span class="nb">audiowrite</span><span class="p">(</span><span class="s1">'wav/reverb-out8.wav'</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">f8</span><span class="p">);</span>
+
+<span class="c1">% plot waveforms</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s1">'n - time samples (at 11025 Hz)'</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s1">'x[n] - amplitude'</span><span class="p">)</span>
+<span class="nb">axis</span><span class="p">([</span><span class="mi">0</span> <span class="mi">80000</span> <span class="o">-</span><span class="mf">1.5</span> <span class="mf">1.5</span><span class="p">])</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s1">'position'</span><span class="p">,[</span><span class="mf">0.08</span> <span class="mf">0.58</span> <span class="mf">0.9</span> <span class="mf">0.4</span><span class="p">],</span><span class="s1">'units'</span><span class="p">,</span><span class="s1">'normalized'</span><span class="p">);</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s1">'n - time samples (at 11025 Hz)'</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s1">'y[n] - amplitude'</span><span class="p">)</span>
+<span class="nb">axis</span><span class="p">([</span><span class="mi">0</span> <span class="mi">80000</span> <span class="o">-</span><span class="mf">1.5</span> <span class="mf">1.5</span><span class="p">])</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s1">'position'</span><span class="p">,[</span><span class="mf">0.08</span> <span class="mf">0.08</span> <span class="mf">0.9</span> <span class="mf">0.4</span><span class="p">],</span><span class="s1">'units'</span><span class="p">,</span><span class="s1">'normalized'</span><span class="p">);</span>
+<span class="nb">saveas</span><span class="p">(</span><span class="nb">gcf</span><span class="p">,</span> <span class="s1">'wav/reverb'</span><span class="p">,</span> <span class="s1">'png'</span><span class="p">)</span>
+<span class="nb">shg</span></code></pre></figure>
+
+<h3 id="output-plot--reverbpng">Output Plot — <a href="/matlab/reverb/reverb.png"><code>reverb.png</code></a></h3>
+
+<p><img src="/matlab/reverb/reverb.png" alt="png" class="matlab" width="95%" /></p>
+
+<h3 id="downloads">Downloads</h3>
+
+<ul>
+  <li><a href="/matlab/reverb.m"><code>reverb.m</code></a></li>
+  <li><a href="/matlab/reverb/reverb.png"><code>reverb.png</code></a></li>
+  <li><a href="/matlab/reverb/reverb-in.wav"><code>reverb-in.wav</code></a></li>
+  <li><a href="/matlab/reverb/reverb-out.wav"><code>reverb-out.wav</code></a></li>
+  <li><a href="/matlab/reverb/reverb-out8.wav"><code>reverb-out8.wav</code></a></li>
+</ul>
+
+</div>
+
+<hr />
+
+
+<div class="related">
+  <h3>Related Posts</h3>
+  <ul class="related-posts">
+    
+    <li>
+      <a href="/blogs/2015-08-01/derivative.html">
+        <code>
+          <small>[01 Aug 2015]</small>
+        </code> Derivative of CT signals with MATLAB&reg;
+        <!-- <small>01 Aug 2015</small> -->
+        <small> &mdash; Rodney Kennedy</small>
+      </a>
+    </li>
+    
+    <li>
+      <a href="/blogs/2015-07-28/complex-exp.html">
+        <code>
+          <small>[28 Jul 2015]</small>
+        </code> Hacking with MATLAB&reg; and Complex Exponentials
+        <!-- <small>28 Jul 2015</small> -->
+        <small> &mdash; Rodney Kennedy</small>
+      </a>
+    </li>
+    
+    <li>
+      <a href="/blogs/2015-07-12/welcome.html">
+        <code>
+          <small>[12 Jul 2015]</small>
+        </code> Get Started with this Site
+        <!-- <small>12 Jul 2015</small> -->
+        <small> &mdash; Rodney Kennedy</small>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+
+  </div>
+</div>
+
+<label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+<script>
+  (function(document) {
+    var toggle = document.querySelector('.sidebar-toggle');
+    var sidebar = document.querySelector('#sidebar');
+    var checkbox = document.querySelector('#sidebar-checkbox');
+    document.addEventListener('click', function(e) {
+      var target = e.target;
+      if(!checkbox.checked || sidebar.contains(target) || (target === checkbox || target === toggle)) return;
+      checkbox.checked = false;
+    }, false);
+  })(document);
+</script>
+</body>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    RAK Projects &middot; Hacking with MATLAB&reg; and Complex Exponentials
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="/css/merged.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+
+  <link rel="stylesheet" href="/css/sigpro.css">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/public/head2.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- javascript -->
+  
+  <script type="text/javascript">
+    window.onload=function() {
+      var links = document.links;
+      for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+        if (links[i].hostname != window.location.hostname) {
+          links[i].target = '_blank';
+        }
+      }
+    }
+  </script>
+
+
+  <!-- fa fontawesome icon font -->
+  <script src="https://use.fontawesome.com/cd1c0384f8.js"></script>
+
+  <!-- faa fontawesome animations -->
+  <link rel="stylesheet" href="/css/font-awesome-animation.css">
+
+  <!-- RAK style embellishments and -->
+  <style type="text/css">
+    .base03 { background: rgba(121, 115, 121, 0.6); }
+    .base07 { background: rgba(255, 255, 255, 0.6); }
+    .base08 { background: rgba(221, 70, 76, 0.6); }
+    .base09 { background: rgba(253, 139, 25, 0.6); }
+    .base0A { background: rgba(253, 204, 89, 0.6); }
+    .base0B { background: rgba(143, 193, 62, 0.6); }
+    .base0C { background: rgba(20, 155, 147, 0.6); }
+    .base0D { background: rgba(18, 144, 191, 0.6); }
+    .base0E { background: rgba(200, 94, 124, 0.6); }
+    .base0F { background: rgba(179, 53, 8, 0.6); }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Flexslider Library  -->
+  <link rel="stylesheet" href="/css/flexslider.css" type="text/css">
+  <link rel="stylesheet" href="/css/flexslider-fix.css" type="text/css">
+  <script src="/js/jquery.flexslider-min.js"></script>
+  <!-- Initialisation Code  -->
+  <script src="/js/app.js"></script>
+ 
+  <script>
+  $(document).ready(function(){
+    $("table#major tr:contains('ENGN2228')").addClass("base08");
+    $("table#minor tr:contains('ENGN2228')").addClass("base0C");
+    $("table#activity tr:contains('Exam')").addClass("base03");
+    $("table#activity tr:contains('Assignment')").addClass("base09");
+    $("table#activity tr:contains('Exam') td").css({ "height": "68px" });
+
+    $("table tr:contains('Lecture'), table#activity tr:contains('Lecture')").addClass("base08");
+    $("table tr:contains('Drop-in')").addClass("base09");
+    $("table tr:contains('CLAB')").addClass("base0A");
+    $("table tr:contains('HLAB')").addClass("base0B");
+    $("table#activity tr:contains('Tutorial')").addClass("base0D");
+    $("table#assessment tr:contains('TOTAL')").addClass("base0E");
+    $("table#assessment tr:contains('Tutorial')").addClass("base0D");
+    $("table#assessment tr:contains('Mid-Semester Exam')").addClass("base03");
+    $("table#assessment tr:contains('Final Exam')").addClass("base03");
+    $("table#assessment tr:contains('ASSN')").addClass("base09");
+    $("table#instructors tr:contains('Lecturer')").addClass("base0B");
+    $("table#instructors tr:contains('Tutor')").addClass("base0D");
+    $("table#instructors tr:contains('Electronics Lab')").addClass("base08");
+    // $("table#activity tr:contains('break')").addClass("base03");
+    $("table#activity tr:contains('Module')").addClass("base07");
+    $("table#activity tr:contains('break') td").css({ "height": "98px" });
+    $("table#activity tr:contains('Module') td").css({
+      "text-align": "center",
+      "font-size": "120%",
+      "border": "0"
+    });
+    $("table a").attr("target", "_blank");
+    // $("table a").attr("type", "application/pdf");
+  });
+  </script>
+
+  <!-- mathjax -->
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG.js">
+  </script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      TeX: { equationNumbers: { autoNumber: "AMS" } },
+      SVG: { scale: 90, blacker: 10 }
+    });
+  </script>
+</head>
+
+<body class="theme-base-RAK sidebar-overlay">
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+<div class="sidebar" id="sidebar">  <!-- Toggleable sidebar -->
+  <div class="sidebar-item">
+    <p class="cent smll">Website for:</p> <p class="cent"><b>RAK<br>&mdash; Projects &mdash;</b></p>
+  </div>
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item " href="/index.html"><i class="fa fa-institution fa-fw" aria-hidden="true"></i>&nbsp;Home Page</a>
+    <a class="sidebar-nav-item" href="/1-planetpage.html"><i class="fa fa-camera fa-fw fa-fw" aria-hidden="true"></i>&nbsp;Planet Astrophotography</a>
+    <a class="sidebar-nav-item" href="/resources/1-demo.html">&emsp;&ensp;<i class="fa fa-bug fa-fw fa-fw" aria-hidden="true"></i>&nbsp;Demo</a>
+  </nav>
+  <div class="sidebar-item">
+    <p class="cent smll">Site Version: <b>Fri 22 Mar 2019 20:02</b><br>
+    &copy; 2019. All rights reserved.<br><br>
+    Created with <a href="http://jekyllrb.com">Jekyll</a>,
+     <a href="https://github.com/poole/lanyon">Lanyon</a>
+    & <a href="https://cloudcannon.com">cloud<b>cannon</b>.</p>
+  </div>
+</div>
+
+<div class="wrap"> <!-- Wrap is the content to shift when toggling the sidebar -->
+  <div class="masthead">
+    <div class="container">
+      <h3 class="masthead-title" style="white-space: nowrap; line-height:18px;">
+        <img src="/images/RAK-logo.png" style="margin:-5px 0.7rem 3px 1.3rem; display:inline-block; width:30%; max-width:150px; min-width:95px; border:none blue 1px; vertical-align:top;"><span style="display:inline-block; vertical-align:top; border:none blue 1px;">
+        <a href="/index.html" title="Home">RAK Projects Geriatric Ramblings</a>
+        <div style="line-height:18%;">
+          <br>
+        </div>
+        <small>Australia Somewhere&nbsp;&copy;&nbsp;2019.</small></span>
+      </h3>
+    </div>
+  </div>
+
+  <div class="container content">
+    <div class="post">
+  <h2 class="post-title">Hacking with MATLAB&reg; and Complex Exponentials</h2>
+  <!-- <span class="post-date">28 Jul 2015</span> -->
+  <span class="post-date">Rodney Kennedy</span>
+  <p>In the lectures it was illustrated how to use MATLAB® to explore complex exponentials. Complex values <script type="math/tex">C</script> and <script type="math/tex">\alpha</script> are the same symbols as shown on Slide 68 of the lectures.</p>
+
+<h3 class="no_toc toc_title no-print" id="page-index">Page Index</h3>
+
+<ul class="no-print" id="markdown-toc">
+  <li><a href="#1-ct-complex-exponential" id="markdown-toc-1-ct-complex-exponential">1) CT Complex Exponential</a>    <ul>
+      <li><a href="#matlab-code-for-ct-complex-exponential--ctcexpm" id="markdown-toc-matlab-code-for-ct-complex-exponential--ctcexpm">MATLAB® code for CT Complex Exponential — <code>ctcexp.m</code></a></li>
+    </ul>
+  </li>
+  <li><a href="#2-dt-complex-exponential" id="markdown-toc-2-dt-complex-exponential">2) DT Complex Exponential</a>    <ul>
+      <li><a href="#matlab-code-for-dt-complex-exponential--dtcexpm" id="markdown-toc-matlab-code-for-dt-complex-exponential--dtcexpm">MATLAB® code for DT Complex Exponential — <code>dtcexp.m</code></a></li>
+    </ul>
+  </li>
+  <li><a href="#3-revised-and-improved-matlab-code--cmplxexpm" id="markdown-toc-3-revised-and-improved-matlab-code--cmplxexpm">3) Revised and Improved MATLAB® code — <code>cmplxexp.m</code></a>    <ul>
+      <li><a href="#output-png-figure--ct-cmplxexppng" id="markdown-toc-output-png-figure--ct-cmplxexppng">Output png Figure — <code>ct-cmplxexp.png</code></a></li>
+      <li><a href="#output-png-figure--dt-cmplxexppng" id="markdown-toc-output-png-figure--dt-cmplxexppng">Output png Figure — <code>dt-cmplxexp.png</code></a></li>
+    </ul>
+  </li>
+  <li><a href="#4-downloads" id="markdown-toc-4-downloads">4) Downloads</a></li>
+</ul>
+
+<h3 id="1-ct-complex-exponential">1) CT Complex Exponential</h3>
+
+<p><img src="/matlab/figures/ct2.png" alt="ct2" class="matlab" style="margin:0.2rem 0rem 0rem 1.5rem; float:right; width:50%; max-width:500px" /></p>
+
+<p>The complex exponential is given by</p>
+
+<script type="math/tex; mode=display">x(t)=C\,e^{\alpha t}</script>
+
+<p>This is computed (using the MATLAB® script shown below) and plotted (in the figure).  The explicit values here are <script type="math/tex">C=0.5+0.7j</script> and <script type="math/tex">\alpha=-0.2+2j</script>.</p>
+
+<h4 id="matlab-code-for-ct-complex-exponential--ctcexpm">MATLAB® code for CT Complex Exponential — <a href="/matlab/ctcexp.m"><code>ctcexp.m</code></a></h4>
+
+<figure class="highlight"><pre><code class="language-matlab" data-lang="matlab"><span class="n">t</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">10</span><span class="p">];</span>
+<span class="nb">alpha</span><span class="o">=-</span><span class="mf">0.2</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="nb">j</span><span class="p">;</span>
+<span class="n">C</span><span class="o">=</span><span class="mf">0.5</span><span class="o">+.</span><span class="mi">7</span><span class="o">*</span><span class="nb">j</span><span class="p">;</span>
+<span class="n">yt</span><span class="o">=</span><span class="n">C</span><span class="o">*</span><span class="nb">exp</span><span class="p">(</span><span class="nb">alpha</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
+<span class="c1">%plot(t, real(yt));shg</span>
+<span class="nb">plot3</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="nb">real</span><span class="p">(</span><span class="n">yt</span><span class="p">),</span> <span class="nb">imag</span><span class="p">(</span><span class="n">yt</span><span class="p">))</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s1">'time'</span><span class="p">)</span>
+<span class="nb">axis</span> <span class="n">square</span>
+<span class="nb">shg</span></code></pre></figure>
+
+<h3 id="2-dt-complex-exponential">2) DT Complex Exponential</h3>
+
+<p><img src="/matlab/figures/dt2.png" alt="dt2" class="matlab" align="top" style="margin:0.2rem 0rem 0rem 1.5rem; float:right; width:50%; max-width:500px" /></p>
+
+<p>For discrete time it is very similiar.</p>
+
+<script type="math/tex; mode=display">x[n]=C\,\beta^n,\quad \beta=e^{\alpha}</script>
+
+<p>The samples are now at integer values and we plot the complex exponential as a sequence of stars.  An underlying “continuous” complex exponential is plotted in green to clarify how the discrete time samples are distributed.</p>
+
+<h4 id="matlab-code-for-dt-complex-exponential--dtcexpm">MATLAB® code for DT Complex Exponential — <a href="/matlab/dtcexp.m"><code>dtcexp.m</code></a></h4>
+
+<figure class="highlight"><pre><code class="language-matlab" data-lang="matlab"><span class="n">t</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">10</span><span class="p">];</span>
+<span class="nb">alpha</span><span class="o">=-</span><span class="mf">0.2</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="nb">j</span><span class="p">;</span>
+<span class="n">C</span><span class="o">=</span><span class="mf">0.5</span><span class="o">+.</span><span class="mi">7</span><span class="o">*</span><span class="nb">j</span><span class="p">;</span>
+<span class="n">yt</span><span class="o">=</span><span class="n">C</span><span class="o">*</span><span class="nb">exp</span><span class="p">(</span><span class="nb">alpha</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
+<span class="nb">plot3</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="nb">real</span><span class="p">(</span><span class="n">yt</span><span class="p">),</span> <span class="nb">imag</span><span class="p">(</span><span class="n">yt</span><span class="p">),</span><span class="s1">'green'</span><span class="p">)</span>
+<span class="nb">hold</span> <span class="n">on</span><span class="p">;</span>
+
+<span class="n">n</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">:</span><span class="mi">10</span><span class="p">];</span>
+<span class="nb">alpha</span><span class="o">=-</span><span class="mf">0.2</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="nb">j</span><span class="p">;</span>
+<span class="n">C</span><span class="o">=</span><span class="mf">0.5</span><span class="o">+.</span><span class="mi">7</span><span class="o">*</span><span class="nb">j</span><span class="p">;</span>
+<span class="n">yn</span><span class="o">=</span><span class="n">C</span><span class="o">*</span><span class="nb">exp</span><span class="p">(</span><span class="nb">alpha</span><span class="o">*</span><span class="n">n</span><span class="p">);</span>
+<span class="nb">plot3</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">real</span><span class="p">(</span><span class="n">yn</span><span class="p">),</span> <span class="nb">imag</span><span class="p">(</span><span class="n">yn</span><span class="p">),</span><span class="s1">'*'</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s1">'time'</span><span class="p">)</span>
+<span class="nb">axis</span> <span class="n">square</span>
+<span class="nb">hold</span> <span class="n">off</span><span class="p">;</span>
+<span class="nb">shg</span></code></pre></figure>
+
+<h3 id="3-revised-and-improved-matlab-code--cmplxexpm">3) Revised and Improved MATLAB® code — <a href="/matlab/cmplxexp.m"><code>cmplxexp.m</code></a></h3>
+
+<p>This code merges the plots and illustrates some other tricks with MATLAB®</p>
+
+<figure class="highlight"><pre><code class="language-matlab" data-lang="matlab"><span class="nb">alpha</span><span class="o">=-</span><span class="mf">0.2</span><span class="o">+</span><span class="mi">2</span><span class="nb">j</span><span class="p">;</span>
+<span class="n">C</span><span class="o">=</span><span class="mf">0.5</span><span class="o">+</span><span class="mf">0.7</span><span class="nb">j</span><span class="p">;</span>
+
+<span class="n">dd</span><span class="o">=</span><span class="mf">0.1</span><span class="p">;</span>
+<span class="n">t</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">:</span><span class="n">dd</span><span class="p">:</span><span class="mi">10</span><span class="p">];</span>
+<span class="n">yt</span><span class="o">=</span><span class="n">C</span><span class="o">*</span><span class="nb">exp</span><span class="p">(</span><span class="nb">alpha</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
+
+<span class="nb">clf</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="s1">'position'</span><span class="p">,[</span><span class="mf">0.05</span> <span class="mf">0.06</span> <span class="mf">0.9</span> <span class="mf">1.1</span><span class="p">])</span> <span class="c1">% so png's clip nicely</span>
+
+<span class="c1">% plot the continuous curve</span>
+<span class="nb">plot3</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="nb">real</span><span class="p">(</span><span class="n">yt</span><span class="p">),</span> <span class="nb">imag</span><span class="p">(</span><span class="n">yt</span><span class="p">),</span> <span class="s1">'green'</span><span class="p">)</span>
+<span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span> <span class="mi">10</span> <span class="o">-</span><span class="mi">8</span> <span class="mi">8</span> <span class="o">-</span><span class="mi">8</span> <span class="mi">8</span><span class="p">]);</span> <span class="nb">axis</span> <span class="n">square</span>
+<span class="nb">set</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">'defaultAxesTickLabelInterpreter'</span><span class="p">,</span><span class="s1">'latex'</span><span class="p">);</span>
+<span class="nb">set</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">'defaultLegendInterpreter'</span><span class="p">,</span><span class="s1">'latex'</span><span class="p">);</span>
+
+<span class="c1">% labels (in latex)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s1">'continuous time $t$'</span><span class="p">,</span> <span class="s1">'Interpreter'</span><span class="p">,</span> <span class="s1">'Latex'</span><span class="p">,</span> <span class="s1">'FontSize'</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s1">'real part'</span><span class="p">,</span> <span class="s1">'FontSize'</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span>
+<span class="nb">zlabel</span><span class="p">(</span><span class="s1">'imag part'</span><span class="p">,</span> <span class="s1">'FontSize'</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span>
+<span class="n">h</span><span class="o">=</span><span class="nb">text</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="s1">'$x(t)=(0.5+0.7j)\,e^{(-0.2+2j)t}$'</span><span class="p">,</span> <span class="s1">'FontSize'</span><span class="p">,</span> <span class="mi">18</span><span class="p">);</span>
+<span class="nb">shg</span><span class="p">;</span> <span class="nb">pause</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="c1">% flash up the CT complex exponential</span>
+
+<span class="c1">% output CT complex exponential to png file</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gcf</span><span class="p">,</span><span class="s1">'PaperUnits'</span><span class="p">,</span><span class="s1">'inches'</span><span class="p">,</span><span class="s1">'PaperPosition'</span><span class="p">,[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">6</span> <span class="mi">5</span><span class="p">])</span> <span class="c1">%150dpi</span>
+<span class="nb">saveas</span><span class="p">(</span><span class="nb">gcf</span><span class="p">,</span> <span class="s1">'figures/ct-cmplxexp'</span><span class="p">,</span> <span class="s1">'png'</span><span class="p">)</span>
+
+<span class="nb">hold</span> <span class="n">on</span><span class="p">;</span> <span class="c1">% we will overlay the CT complex exponential with the DT complex exponential</span>
+
+<span class="c1">% plot the discrete points</span>
+<span class="n">n</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">:</span><span class="mi">10</span><span class="p">];</span>
+<span class="n">yn</span><span class="o">=</span><span class="n">C</span><span class="o">*</span><span class="nb">exp</span><span class="p">(</span><span class="nb">alpha</span><span class="o">*</span><span class="n">n</span><span class="p">);</span>
+<span class="nb">plot3</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">real</span><span class="p">(</span><span class="n">yn</span><span class="p">),</span> <span class="nb">imag</span><span class="p">(</span><span class="n">yn</span><span class="p">),</span> <span class="s1">'*'</span><span class="p">)</span>
+
+<span class="c1">% labels (in latex)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s1">'discrete time $n$'</span><span class="p">,</span> <span class="s1">'Interpreter'</span><span class="p">,</span> <span class="s1">'Latex'</span><span class="p">,</span> <span class="s1">'FontSize'</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span>
+<span class="nb">delete</span><span class="p">(</span><span class="n">h</span><span class="p">);</span> <span class="c1">% remove old CT text label</span>
+<span class="nb">text</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="s1">'$x[n]=(0.5+0.7j)\,\beta^n,\quad \beta=e^{-0.2+2j}$'</span><span class="p">,</span> <span class="s1">'FontSize'</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span>
+
+<span class="c1">% output DT complex exponential to png file</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gcf</span><span class="p">,</span><span class="s1">'PaperUnits'</span><span class="p">,</span><span class="s1">'inches'</span><span class="p">,</span><span class="s1">'PaperPosition'</span><span class="p">,[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">6</span> <span class="mi">5</span><span class="p">])</span> <span class="c1">%150dpi</span>
+<span class="nb">saveas</span><span class="p">(</span><span class="nb">gcf</span><span class="p">,</span> <span class="s1">'figures/dt-cmplxexp'</span><span class="p">,</span> <span class="s1">'png'</span><span class="p">)</span>
+
+<span class="nb">hold</span> <span class="n">off</span><span class="p">;</span> <span class="nb">shg</span></code></pre></figure>
+
+<h4 id="output-png-figure--ct-cmplxexppng">Output png Figure — <a href="/matlab/figures/ct-cmplxexp.png"><code>ct-cmplxexp.png</code></a></h4>
+
+<p><img src="/matlab/figures/ct-cmplxexp.png" alt="ct" width="45%" class="matlab" /></p>
+
+<h4 id="output-png-figure--dt-cmplxexppng">Output png Figure — <a href="/matlab/figures/dt-cmplxexp.png"><code>dt-cmplxexp.png</code></a></h4>
+
+<p><img src="/matlab/figures/dt-cmplxexp.png" alt="dt" width="45%" class="matlab" /></p>
+
+<h3 id="4-downloads">4) Downloads</h3>
+
+<ul>
+  <li><a href="/matlab/ctcexp.m"><code>ctcexp.m</code></a></li>
+  <li><a href="/matlab/dtcexp.m"><code>dtcexp.m</code></a></li>
+  <li><a href="/matlab/cmplxexp.m"><code>cmplxexp.m</code></a></li>
+  <li><a href="/matlab/figures/ct2.png"><code>ct2.png</code></a></li>
+  <li><a href="/matlab/figures/dt2.png"><code>dt2.png</code></a></li>
+  <li><a href="/matlab/figures/ct-cmplxexp.png"><code>ct-cmplxexp.png</code></a></li>
+  <li><a href="/matlab/figures/dt-cmplxexp.png"><code>dt-cmplxexp.png</code></a></li>
+</ul>
+
+</div>
+
+<hr />
+
+
+<div class="related">
+  <h3>Related Posts</h3>
+  <ul class="related-posts">
+    
+    <li>
+      <a href="/blogs/2015-08-04/reverb.html">
+        <code>
+          <small>[04 Aug 2015]</small>
+        </code> Poor-man's Reverberation Modelling with MATLAB&reg;
+        <!-- <small>04 Aug 2015</small> -->
+        <small> &mdash; Rodney Kennedy</small>
+      </a>
+    </li>
+    
+    <li>
+      <a href="/blogs/2015-08-01/derivative.html">
+        <code>
+          <small>[01 Aug 2015]</small>
+        </code> Derivative of CT signals with MATLAB&reg;
+        <!-- <small>01 Aug 2015</small> -->
+        <small> &mdash; Rodney Kennedy</small>
+      </a>
+    </li>
+    
+    <li>
+      <a href="/blogs/2015-07-12/welcome.html">
+        <code>
+          <small>[12 Jul 2015]</small>
+        </code> Get Started with this Site
+        <!-- <small>12 Jul 2015</small> -->
+        <small> &mdash; Rodney Kennedy</small>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+
+  </div>
+</div>
+
+<label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+<script>
+  (function(document) {
+    var toggle = document.querySelector('.sidebar-toggle');
+    var sidebar = document.querySelector('#sidebar');
+    var checkbox = document.querySelector('#sidebar-checkbox');
+    document.addEventListener('click', function(e) {
+      var target = e.target;
+      if(!checkbox.checked || sidebar.contains(target) || (target === checkbox || target === toggle)) return;
+      checkbox.checked = false;
+    }, false);
+  })(document);
+</script>
+</body>

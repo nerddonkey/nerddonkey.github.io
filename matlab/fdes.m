@@ -1,0 +1,6 @@
+lpFilt = designfilt('lowpassfir','PassbandFrequency',0.25, ...
+         'StopbandFrequency',0.3,'PassbandRipple',0.5, ...
+         'StopbandAttenuation',35,'DesignMethod','kaiserwin');
+fvtool(lpFilt);shg
+%pause
+stem(lpFilt.Coefficients);shg

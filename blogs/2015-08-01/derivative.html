@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    RAK Projects &middot; Derivative of CT signals with MATLAB&reg;
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="/css/merged.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+
+  <link rel="stylesheet" href="/css/sigpro.css">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/public/head2.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- javascript -->
+  
+  <script type="text/javascript">
+    window.onload=function() {
+      var links = document.links;
+      for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+        if (links[i].hostname != window.location.hostname) {
+          links[i].target = '_blank';
+        }
+      }
+    }
+  </script>
+
+
+  <!-- fa fontawesome icon font -->
+  <script src="https://use.fontawesome.com/cd1c0384f8.js"></script>
+
+  <!-- faa fontawesome animations -->
+  <link rel="stylesheet" href="/css/font-awesome-animation.css">
+
+  <!-- RAK style embellishments and -->
+  <style type="text/css">
+    .base03 { background: rgba(121, 115, 121, 0.6); }
+    .base07 { background: rgba(255, 255, 255, 0.6); }
+    .base08 { background: rgba(221, 70, 76, 0.6); }
+    .base09 { background: rgba(253, 139, 25, 0.6); }
+    .base0A { background: rgba(253, 204, 89, 0.6); }
+    .base0B { background: rgba(143, 193, 62, 0.6); }
+    .base0C { background: rgba(20, 155, 147, 0.6); }
+    .base0D { background: rgba(18, 144, 191, 0.6); }
+    .base0E { background: rgba(200, 94, 124, 0.6); }
+    .base0F { background: rgba(179, 53, 8, 0.6); }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Flexslider Library  -->
+  <link rel="stylesheet" href="/css/flexslider.css" type="text/css">
+  <link rel="stylesheet" href="/css/flexslider-fix.css" type="text/css">
+  <script src="/js/jquery.flexslider-min.js"></script>
+  <!-- Initialisation Code  -->
+  <script src="/js/app.js"></script>
+ 
+  <script>
+  $(document).ready(function(){
+    $("table#major tr:contains('ENGN2228')").addClass("base08");
+    $("table#minor tr:contains('ENGN2228')").addClass("base0C");
+    $("table#activity tr:contains('Exam')").addClass("base03");
+    $("table#activity tr:contains('Assignment')").addClass("base09");
+    $("table#activity tr:contains('Exam') td").css({ "height": "68px" });
+
+    $("table tr:contains('Lecture'), table#activity tr:contains('Lecture')").addClass("base08");
+    $("table tr:contains('Drop-in')").addClass("base09");
+    $("table tr:contains('CLAB')").addClass("base0A");
+    $("table tr:contains('HLAB')").addClass("base0B");
+    $("table#activity tr:contains('Tutorial')").addClass("base0D");
+    $("table#assessment tr:contains('TOTAL')").addClass("base0E");
+    $("table#assessment tr:contains('Tutorial')").addClass("base0D");
+    $("table#assessment tr:contains('Mid-Semester Exam')").addClass("base03");
+    $("table#assessment tr:contains('Final Exam')").addClass("base03");
+    $("table#assessment tr:contains('ASSN')").addClass("base09");
+    $("table#instructors tr:contains('Lecturer')").addClass("base0B");
+    $("table#instructors tr:contains('Tutor')").addClass("base0D");
+    $("table#instructors tr:contains('Electronics Lab')").addClass("base08");
+    // $("table#activity tr:contains('break')").addClass("base03");
+    $("table#activity tr:contains('Module')").addClass("base07");
+    $("table#activity tr:contains('break') td").css({ "height": "98px" });
+    $("table#activity tr:contains('Module') td").css({
+      "text-align": "center",
+      "font-size": "120%",
+      "border": "0"
+    });
+    $("table a").attr("target", "_blank");
+    // $("table a").attr("type", "application/pdf");
+  });
+  </script>
+
+  <!-- mathjax -->
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG.js">
+  </script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      TeX: { equationNumbers: { autoNumber: "AMS" } },
+      SVG: { scale: 90, blacker: 10 }
+    });
+  </script>
+</head>
+
+<body class="theme-base-RAK sidebar-overlay">
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+<div class="sidebar" id="sidebar">  <!-- Toggleable sidebar -->
+  <div class="sidebar-item">
+    <p class="cent smll">Website for:</p> <p class="cent"><b>RAK<br>&mdash; Projects &mdash;</b></p>
+  </div>
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item " href="/index.html"><i class="fa fa-institution fa-fw" aria-hidden="true"></i>&nbsp;Home Page</a>
+    <a class="sidebar-nav-item" href="/1-planetpage.html"><i class="fa fa-camera fa-fw fa-fw" aria-hidden="true"></i>&nbsp;Planet Astrophotography</a>
+    <a class="sidebar-nav-item" href="/resources/1-demo.html">&emsp;&ensp;<i class="fa fa-bug fa-fw fa-fw" aria-hidden="true"></i>&nbsp;Demo</a>
+  </nav>
+  <div class="sidebar-item">
+    <p class="cent smll">Site Version: <b>Fri 22 Mar 2019 20:02</b><br>
+    &copy; 2019. All rights reserved.<br><br>
+    Created with <a href="http://jekyllrb.com">Jekyll</a>,
+     <a href="https://github.com/poole/lanyon">Lanyon</a>
+    & <a href="https://cloudcannon.com">cloud<b>cannon</b>.</p>
+  </div>
+</div>
+
+<div class="wrap"> <!-- Wrap is the content to shift when toggling the sidebar -->
+  <div class="masthead">
+    <div class="container">
+      <h3 class="masthead-title" style="white-space: nowrap; line-height:18px;">
+        <img src="/images/RAK-logo.png" style="margin:-5px 0.7rem 3px 1.3rem; display:inline-block; width:30%; max-width:150px; min-width:95px; border:none blue 1px; vertical-align:top;"><span style="display:inline-block; vertical-align:top; border:none blue 1px;">
+        <a href="/index.html" title="Home">RAK Projects Geriatric Ramblings</a>
+        <div style="line-height:18%;">
+          <br>
+        </div>
+        <small>Australia Somewhere&nbsp;&copy;&nbsp;2019.</small></span>
+      </h3>
+    </div>
+  </div>
+
+  <div class="container content">
+    <div class="post">
+  <h2 class="post-title">Derivative of CT signals with MATLAB&reg;</h2>
+  <!-- <span class="post-date">01 Aug 2015</span> -->
+  <span class="post-date">Rodney Kennedy</span>
+  <p>We use fine-scale discrete time to emulate continuous time.  Then we use discrete approximation to the derivative to model a system whose output is the derivative of the input.</p>
+
+<h3 class="no_toc toc_title no-print" id="page-index">Page Index</h3>
+
+<ul class="no-print" id="markdown-toc">
+  <li><a href="#matlab-modelling-of-a-derivative-system" id="markdown-toc-matlab-modelling-of-a-derivative-system">MATLAB® Modelling of a Derivative System</a>    <ul>
+      <li><a href="#matlab-function--derivm" id="markdown-toc-matlab-function--derivm">MATLAB® Function — <code>deriv.m</code></a></li>
+      <li><a href="#matlab-function--ddemom" id="markdown-toc-matlab-function--ddemom">MATLAB® Function — <code>ddemo.m</code></a></li>
+      <li><a href="#output-png-figure--ddemopng" id="markdown-toc-output-png-figure--ddemopng">Output png figure — <code>ddemo.png</code></a></li>
+    </ul>
+  </li>
+  <li><a href="#downloads" id="markdown-toc-downloads">Downloads</a></li>
+</ul>
+
+<h3 id="matlab-modelling-of-a-derivative-system">MATLAB® Modelling of a Derivative System</h3>
+
+<h4 id="matlab-function--derivm">MATLAB® Function — <a href="/matlab/deriv.m"><code>deriv.m</code></a></h4>
+
+<figure class="highlight"><pre><code class="language-matlab" data-lang="matlab"><span class="k">function</span> <span class="p">[</span> <span class="n">dfn</span> <span class="p">]</span> <span class="o">=</span> <span class="n">deriv</span><span class="p">(</span> <span class="n">fn</span><span class="p">,</span> <span class="n">delta</span> <span class="p">)</span>
+<span class="c1">%DERIV returns an approximation to the derivative of fn</span>
+
+<span class="c1">% compute the incremental slope between the elements of fn; 'help diff'</span>
+<span class="n">dfn</span><span class="o">=</span><span class="nb">diff</span><span class="p">(</span><span class="n">fn</span><span class="p">)/</span><span class="n">delta</span><span class="p">;</span>
+
+<span class="c1">% pad dfn so that it is the same length as fn</span>
+<span class="n">dfn</span><span class="o">=</span><span class="p">[</span><span class="n">dfn</span><span class="p">,</span> <span class="n">dfn</span><span class="p">(</span><span class="k">end</span><span class="p">)];</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Create an arbitray function <script type="math/tex">f(t)</script>; then we want to determine/plot (numerically)</p>
+
+<script type="math/tex; mode=display">f'(t)=\frac{df}{dt}\quad\text{and}\quad f''(t)=\frac{d^2f}{dt^2},</script>
+
+<p>over some time range.</p>
+
+<p>As an example, take</p>
+
+<script type="math/tex; mode=display">f(t)=e^{-t^2/20} \big( \sin(t)+t^2/20-0.8\cos(\pi t) \big)</script>
+
+<p>on the interval <script type="math/tex">-15\leq t\leq10</script>, with fine-scale time divsion of <script type="math/tex">0.05</script>.  Plot <script type="math/tex">f'(t)</script> and <script type="math/tex">f''(t)</script>.</p>
+
+<h4 id="matlab-function--ddemom">MATLAB® Function — <a href="/matlab/ddemo.m"><code>ddemo.m</code></a></h4>
+
+<figure class="highlight"><pre><code class="language-matlab" data-lang="matlab"><span class="n">dd</span><span class="o">=</span><span class="mf">0.05</span><span class="p">;</span> <span class="c1">% small step size</span>
+<span class="n">tt</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">15</span><span class="p">:</span><span class="n">dd</span><span class="p">:</span><span class="mi">10</span><span class="p">];</span> <span class="c1">% time samples</span>
+
+<span class="c1">% some arbitrary function (change this)</span>
+<span class="n">f</span><span class="o">=</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="n">tt</span><span class="o">.^</span><span class="mi">2</span><span class="p">/</span><span class="mi">20</span><span class="p">)</span> <span class="o">.*</span> <span class="p">(</span><span class="nb">sin</span><span class="p">(</span><span class="n">tt</span><span class="p">)</span><span class="o">+</span><span class="n">tt</span><span class="o">.^</span><span class="mi">2</span><span class="p">/</span><span class="mi">20</span><span class="o">-</span><span class="mf">0.8</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="nb">pi</span><span class="o">*</span><span class="n">tt</span><span class="p">));</span>
+
+<span class="n">pos</span><span class="o">=</span><span class="p">[</span><span class="mf">0.07</span> <span class="mf">0.74</span> <span class="mf">0.9</span> <span class="mf">0.24</span><span class="p">];</span>
+<span class="c1">% plot the function</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="s1">'position'</span><span class="p">,</span><span class="n">pos</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">tt</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="s1">'black'</span><span class="p">);</span> <span class="nb">hold</span> <span class="n">on</span> <span class="c1">% draw as line</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">tt</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="s1">'.black'</span><span class="p">);</span> <span class="nb">hold</span> <span class="n">off</span> <span class="c1">% superimpose the points as dots</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s1">'time t'</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s1">'function f'</span><span class="p">)</span>
+
+<span class="c1">% compute our approximate derivative</span>
+<span class="n">dfdt</span><span class="o">=</span><span class="n">deriv</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">dd</span><span class="p">);</span>
+
+<span class="c1">% plot the derivative</span>
+<span class="n">pos</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">=</span><span class="n">pos</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mf">0.33</span><span class="p">;</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="s1">'position'</span><span class="p">,</span><span class="n">pos</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">tt</span><span class="p">,</span><span class="n">dfdt</span><span class="p">,</span><span class="s1">'red'</span><span class="p">);</span> <span class="nb">hold</span> <span class="n">on</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">tt</span><span class="p">,</span><span class="n">dfdt</span><span class="p">,</span><span class="s1">'.red'</span><span class="p">);</span> <span class="nb">hold</span> <span class="n">off</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s1">'time t'</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s1">'derivative df/dt'</span><span class="p">)</span>
+
+<span class="c1">% approximate second derivative function</span>
+<span class="n">ddfdtt</span><span class="o">=</span><span class="n">deriv</span><span class="p">(</span><span class="n">deriv</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">dd</span><span class="p">),</span> <span class="n">dd</span><span class="p">);</span>
+
+<span class="c1">% plot the second derivative</span>
+<span class="n">pos</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">=</span><span class="n">pos</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mf">0.33</span><span class="p">;</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="s1">'position'</span><span class="p">,</span><span class="n">pos</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">tt</span><span class="p">,</span><span class="n">ddfdtt</span><span class="p">,</span><span class="s1">'blue'</span><span class="p">);</span> <span class="nb">hold</span> <span class="n">on</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">tt</span><span class="p">,</span><span class="n">ddfdtt</span><span class="p">,</span><span class="s1">'.blue'</span><span class="p">);</span> <span class="nb">hold</span> <span class="n">off</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s1">'time t'</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s1">'derivative d^2f/dt^2'</span><span class="p">)</span>
+
+<span class="nb">set</span><span class="p">(</span><span class="nb">gcf</span><span class="p">,</span><span class="s1">'PaperUnits'</span><span class="p">,</span><span class="s1">'inches'</span><span class="p">,</span><span class="s1">'PaperPosition'</span><span class="p">,[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">8</span> <span class="mi">6</span><span class="p">])</span> <span class="c1">%150dpi</span>
+<span class="nb">saveas</span><span class="p">(</span><span class="nb">gcf</span><span class="p">,</span> <span class="s1">'figures/ddemo'</span><span class="p">,</span> <span class="s1">'png'</span><span class="p">)</span>
+<span class="nb">shg</span></code></pre></figure>
+
+<h4 id="output-png-figure--ddemopng">Output png figure — <a href="/matlab/figures/ddemo.png"><code>ddemo.png</code></a></h4>
+
+<p>When plotting we overlaid dots on the continuous curves to indicate where the sample values are (spaced at 0.05).</p>
+
+<p><img src="/matlab/figures/ddemo.png" alt="png" class="matlab" /></p>
+
+<h3 id="downloads">Downloads</h3>
+
+<ul>
+  <li><a href="/matlab/deriv.m"><code>deriv.m</code></a></li>
+  <li><a href="/matlab/ddemo.m"><code>ddemo.m</code></a></li>
+  <li><a href="/matlab/figures/ddemo.png"><code>ddemo.png</code></a></li>
+</ul>
+
+</div>
+
+<hr />
+
+
+<div class="related">
+  <h3>Related Posts</h3>
+  <ul class="related-posts">
+    
+    <li>
+      <a href="/blogs/2015-08-04/reverb.html">
+        <code>
+          <small>[04 Aug 2015]</small>
+        </code> Poor-man's Reverberation Modelling with MATLAB&reg;
+        <!-- <small>04 Aug 2015</small> -->
+        <small> &mdash; Rodney Kennedy</small>
+      </a>
+    </li>
+    
+    <li>
+      <a href="/blogs/2015-07-28/complex-exp.html">
+        <code>
+          <small>[28 Jul 2015]</small>
+        </code> Hacking with MATLAB&reg; and Complex Exponentials
+        <!-- <small>28 Jul 2015</small> -->
+        <small> &mdash; Rodney Kennedy</small>
+      </a>
+    </li>
+    
+    <li>
+      <a href="/blogs/2015-07-12/welcome.html">
+        <code>
+          <small>[12 Jul 2015]</small>
+        </code> Get Started with this Site
+        <!-- <small>12 Jul 2015</small> -->
+        <small> &mdash; Rodney Kennedy</small>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+
+  </div>
+</div>
+
+<label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+<script>
+  (function(document) {
+    var toggle = document.querySelector('.sidebar-toggle');
+    var sidebar = document.querySelector('#sidebar');
+    var checkbox = document.querySelector('#sidebar-checkbox');
+    document.addEventListener('click', function(e) {
+      var target = e.target;
+      if(!checkbox.checked || sidebar.contains(target) || (target === checkbox || target === toggle)) return;
+      checkbox.checked = false;
+    }, false);
+  })(document);
+</script>
+</body>
